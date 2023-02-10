@@ -2,13 +2,13 @@
 - name: Get basic information from Cisco IOS routers
   hosts: ios_routers
   tasks:
-    - name: get IOS router facts
+    - name: Get facts from IOS routers
       cisco.ios.ios_facts:
 
-    - name: Get IPv4 addresses
+    - name: Get IOS version
       debug:
-        msg: "The IOS version is: {{ ansible_net_interfaces }}"
+        msg: "IOS version: {{ ansible_net_version }}"
 
-    - name: display serial number
+    - name: Get router serial number
       debug:
-        msg: "The serial number is: {{ ansible_net_serialnum }}"
+        msg: "S/N: {{ ansible_net_serialnum }}"
